@@ -156,6 +156,11 @@ USER superset
 ######################################################################
 FROM lean AS ci
 
+USER root
+ADD ./docker/run-server.sh /usr/bin/run-server.sh
+RUN chmod a+x /usr/bin/run-server.sh
+USER superset
+
 COPY --chown=superset ./docker/docker-bootstrap.sh /app/docker/
 COPY --chown=superset ./docker/docker-init.sh /app/docker/
 COPY --chown=superset ./docker/docker-ci.sh /app/docker/

@@ -7,6 +7,10 @@
 #
 -r development.txt
 -e file:.
+sqlalchemy-trino
+sqlalchemy-redshift
+PyHive
+pyathenajdbc
     # via -r requirements/base.in
 
 # The following packages are considered to be unsafe in a requirements file:
